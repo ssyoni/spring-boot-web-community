@@ -15,6 +15,7 @@ import javax.persistence.Table;
 
 import com.web.domain.enums.BoardType;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -55,7 +56,20 @@ public class Board {
     1.eager - Board 도메인을 조회할 때 즉시 관련 User 도메인을 조회
     2.lazy - 조회하는 시점이 아닌 실제로 사용될 때 조회
     */
-    // @OneToOne(fetch = FetchType.LAZY) // 
-    // private User user;
+    @OneToOne(fetch = FetchType.LAZY) // 
+    private User user;
+
+    @Builder
+    public Board(String title, String subTitle, String content, BoardType boardType
+                , LocalDateTime createdDate, LocalDateTime updatedDate, User user){
+
+        this.title = title;
+        this.subTitle = subTitle;
+        this.content = content;
+        this.boardType = boardType;
+        this.createdDate = createdDate;
+        this.updatedDate = updatedDate;
+        this.user = user;
+    }
 
 }
