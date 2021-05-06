@@ -22,13 +22,13 @@ public class BoardController {
     @GetMapping({"","/"}) // 매핑경로를 중괄호 사용으로 여러개 받을 수 있다. 
     public String board(@RequestParam(value = "idx", defaultValue = "0") Long idx, Model model) {
         model.addAttribute("board", boardService.findBoardByIndex(idx));
-        return "/board/list";
+        return "board/form";
     }
 
     @GetMapping("/list")
     public String list(@PageableDefault Pageable pageable, Model model){ // @PageableDefault  size, sort, direction 등을 사용하여 페이징 처리에 대한 규약을 정의할 수 있다.
         model.addAttribute("boardList", boardService.findBaordList(pageable));
-        return "/board/list"; // src/resource/templates 을 기준으로 데이터를 바인딩할 타깃의 뷰 경로를 지정한다. 
+        return "board/list"; // src/resource/templates 을 기준으로 데이터를 바인딩할 타깃의 뷰 경로를 지정한다. 
     }
     
 }
