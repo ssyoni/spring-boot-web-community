@@ -4,10 +4,3 @@
 
 <br/>
 
-### version
-- sproingboot: 2.3.10
-
-- gradle : 6.8.3
-
-- junit5
-  
