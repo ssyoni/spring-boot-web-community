@@ -13,9 +13,9 @@ public enum SocialType {
     SocialType(String name){
         this.name = name ;
     }
-    /* 'ROLE_*' 형식으로 소셜 미디어의 권한명을 생성한다. enum을 사용해 권한 생성 로직을 공통코드로 처리하여 중복 코드를 줄일 수 있다. */
+    /* 'ROLE_*' 형식으로 소셜 미디어의 권한명을 생성한다. enum을 사용해 권한 생성 로직을 공통코드로 처리하여 중복코드를 줄인다 */
     public String getRoleType() { return ROLE_PREFIX + name.toUpperCase(); }
-    
+
     public String getValue(){ return name; }
 
     public boolean isEquals(String authority){
