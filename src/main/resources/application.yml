@@ -1,0 +1,7 @@
+kakao :
+    client :
+        clientId : 383d35930fb99d8d14ff9eb70177444f
+        accessTokenUri : https://kauth.kakao.com/auth/token
+        userAuthorizationUri : https://kauth.kakao.com/oauth/authorize
+    resource :
+        userInfoUri : https://kapi.kakao.com/v1/user/me
